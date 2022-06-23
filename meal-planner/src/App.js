@@ -33,6 +33,8 @@ function App() {
         onChange={handleChange}
         />
         <button onClick={getMealData}>Get Daily Meal Plan</button>
+        {mealData && <MealData={mealData}/>}
+    
       </section>
     </div>
   );
