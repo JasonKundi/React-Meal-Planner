@@ -4,6 +4,19 @@ import {useState, useEffect} from 'react';
 const Meal = ({meal}) => {
     const [imageUrl, setImageUrl]= useState('');
 
+    useEffect(()=> {
+        fetch(
+            `https://api.spoonacular.com/recipes/${meal.id}/information?apiKey=eca293f96dc34bddbbbf1b26adfa7c61&includeNutrition=false`
+        )
+        .then(res => res.json())
+        .then(data => {
+            setImageUrl(data.image)
+        })
+        .catch(()=> {
+            console.log('Error')
+        });
+    }, [meal.id])
+
     return (
         <article>
             <h1>{meal.title}</h1>

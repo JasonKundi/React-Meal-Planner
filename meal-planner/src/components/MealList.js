@@ -1,5 +1,6 @@
 import React from 'react';
 import Meal from './Meal'
+import './MealList.css'
 
 const MealList = ({ mealData })=> {
     const nutrients = mealData.nutrients
