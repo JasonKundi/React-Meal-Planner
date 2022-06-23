@@ -13,8 +13,12 @@ const MealList = ({ mealData })=> {
                     <li>Carbohydrates: {nutrients.carbohydrates.toFixed(0)}</li>
                     <li>Fat: {nutrients.fat.toFixed(0)}</li>
                     <li>Protein: {nutrients.protein.toFixed(0)}</li>
-
                 </ul>
+            </section>
+            <section className='Meals'>
+                {mealData.meals.map((meal)=> {
+                    return <Meal key={meal.id} meal={meal}/>
+                })}
             </section>
         </main>
     )

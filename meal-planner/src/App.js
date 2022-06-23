@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import MealList from './components/MealList'
 
 function App() {
   const [mealData, setMealData] = useState(null);
@@ -33,7 +34,7 @@ function App() {
         onChange={handleChange}
         />
         <button onClick={getMealData}>Get Daily Meal Plan</button>
-        {mealData && <MealData={mealData}/>}
+        {mealData && <MealList mealData={mealData}/>}
     
       </section>
     </div>
